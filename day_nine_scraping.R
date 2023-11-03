@@ -17,9 +17,11 @@ View(result)
 
 bk_url<-"https://en.wikipedia.org/wiki/List_of_countries_with_Burger_King_franchises"
 bk<-"/html/body/div[2]/div/div[3]/main/div[3]/div[3]/div[1]/table[3]"
+
+bk2<-"/html/body/div[2]/div/div[3]/main/div[3]/div[3]/div[1]/table[3]"
 bk_url %>% 
   read_html() %>% 
-  html_element(xpath = bk) %>% 
+  html_element(xpath = bk2) %>% 
   html_table()
 
 bk_list<-bk_url %>% 
@@ -65,3 +67,20 @@ imgsrc
 read_html(nyt) %>% html_nodes(css = "picture") %>% html_text()
 
 
+A<-"/html/body/div[2]/div/div[3]/main/div[3]/div[3]/div[1]/table[2]"
+B<-"https://en.wikipedia.org/wiki/The_Game_Awards"
+
+B %>% 
+  read_html() %>% 
+  html_element(xpath = A) %>% 
+  html_table()
+library(rvest)  
+
+
+G<-"/html/body/div[2]/div/div[3]/main/div[3]/div[3]/div[1]/table[2]"
+H<-"https://en.wikipedia.org/wiki/Lady_Gaga_discography"  
+
+H %>% 
+  read_html() %>% 
+  html_element(xpath = G) %>% 
+  html_table()
